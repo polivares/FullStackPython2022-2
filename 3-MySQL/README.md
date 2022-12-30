@@ -88,10 +88,13 @@ Más detalles de instalación en el siguiente enlace: https://www.digitalocean.c
 
 Conexión
 ```bash
-mysql -u root -p
+mysql -u <usuario> -p
 
 // crear base de datos
 create database name; 
+
+// mostrar las bases de datos disponibles
+show databases;
 
  // Seleccione la base de datos
 use databasename; 
@@ -104,8 +107,6 @@ show tables;
 
  // Descripción detallada de la tabla.
 describe tablename; 
-
- seleccionar agrega distinto para eliminar campos duplicados
 
  // Antes de eliminar la base de datos, hay un mensaje
 mysqladmin drop databasename 
