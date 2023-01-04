@@ -213,7 +213,7 @@ insert into nombre_tabla (columna1, columna2, columna3) values (valor1, valor2, 
 Ejemplo: 
 
 ```console
-mysql> insert into App1_cliente (nombre, run, dv) values ('Patricio', 11111111, 1), ('Juan', 2222222, 2);
+mysql> insert into App1_cliente (nombre, ruc, dv) values ('Patricio', 11111111, 1), ('Juan', 2222222, 2);
 Query OK, 2 rows affected (0,01 sec)
 Records: 2  Duplicates: 0  Warnings: 0
 
@@ -228,9 +228,9 @@ select columna1, columna2 from nombre_tabla where condición;
 Ejemplo:
 
 ```console
-mysql> select run from App1_cliente where nombre="Patricio";
+mysql> select ruc from App1_cliente where nombre="Patricio";
 +----------+
-| run      |
+| ruc      |
 +----------+
 | 11111111 |
 +----------+
@@ -249,13 +249,13 @@ update nombre_tabla set columna1=valor1 and columna2=valor2 where columna3=valor
 Ejemplo: 
 
 ```console
-mysql> update App1_cliente set nombre="Patricio Olivares" where run=11111111;
+mysql> update App1_cliente set nombre="Patricio Olivares" where ruc=11111111;
 Query OK, 1 row affected (0,01 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 
 mysql> select * from App1_cliente;
 +----+-------------------+----------+------+
-| id | nombre            | run      | dv   |
+| id | nombre            | ruc      | dv   |
 +----+-------------------+----------+------+
 |  1 | Patricio Olivares | 11111111 |    1 |
 |  2 | Juan              |  2222222 |    2 |
@@ -273,7 +273,7 @@ delete from nombre_tabla where condicion;
 Ejemplo: 
 
 ```console
-mysql> delete from App1_cliente where run=11111111;
+mysql> delete from App1_cliente where ruc=11111111;
 Query OK, 1 row affected (0,01 sec)
 mysql> select * from App1_cliente;
 +----+--------+---------+------+
@@ -296,7 +296,7 @@ Join permite combinar datos entre tablas que tengan una o más columnas en comú
 Ejemplo:
 
 ```console
-mysql> insert into App1_cliente (nombre, run, dv) values ('Alfonso', 33333333, 3), ('Constanza', 44444444, 4);
+mysql> insert into App1_cliente (nombre, ruc, dv) values ('Alfonso', 33333333, 3), ('Constanza', 44444444, 4);
 Query OK, 2 rows affected (0,01 sec)
 Records: 2  Duplicates: 0  Warnings: 0
 
@@ -304,9 +304,9 @@ mysql> insert into App1_cuenta (n_cuenta, saldo, person_id) values (1, 10000, 2)
 Query OK, 3 rows affected (0,01 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 
-mysql> select nombre, run, n_cuenta, saldo from App1_cliente join App1_cuenta on App1_cliente.id=person_id;
+mysql> select nombre, ruc, n_cuenta, saldo from App1_cliente join App1_cuenta on App1_cliente.id=person_id;
 +---------+----------+----------+-------+
-| nombre  | run      | n_cuenta | saldo |
+| nombre  | ruc      | n_cuenta | saldo |
 +---------+----------+----------+-------+
 | Juan    |  2222222 |        1 | 10000 |
 | Juan    |  2222222 |        2 | 10000 |
@@ -314,9 +314,9 @@ mysql> select nombre, run, n_cuenta, saldo from App1_cliente join App1_cuenta on
 +---------+----------+----------+-------+
 3 rows in set (0,00 sec)
 
-mysql> select nombre, run, n_cuenta, saldo from App1_cliente left join App1_cuenta on App1_cliente.id=person_id;
+mysql> select nombre, ruc, n_cuenta, saldo from App1_cliente left join App1_cuenta on App1_cliente.id=person_id;
 +-----------+----------+----------+-------+
-| nombre    | run      | n_cuenta | saldo |
+| nombre    | ruc      | n_cuenta | saldo |
 +-----------+----------+----------+-------+
 | Juan      |  2222222 |        1 | 10000 |
 | Juan      |  2222222 |        2 | 10000 |
