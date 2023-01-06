@@ -79,7 +79,7 @@ $ source FlaskVenv/bin/activate
 Crearemos una nueva carpeta para almacenar nuestro proyecto
 
 ```console
-(FlaskVenv)$ mkdir MyEnterprise # Creamos la carpeta HolaMundo/ para almacenar nuestro proyecto
+(FlaskVenv)$ mkdir MyEnterprise # Creamos la carpeta MyEnterprise/ para almacenar nuestro proyecto
 (FlaskVenv)$ cd MyEnterprise/ # Entramos en dicha carpeta
 (FlaskVenv)$ pwd # Ubicación actual
 /ruta/completa/del/proyecto/MyEnterprise/
@@ -87,7 +87,7 @@ Crearemos una nueva carpeta para almacenar nuestro proyecto
 Dentro de nuestra carpeta *MyEnterprise/*, crearemos un archivo que contendrá el siguiente código
 
 ```python 
-# Filename: app.py
+# Filename: server.py
 
 from flask import Flask # Importamos la clase Flask
 
@@ -95,7 +95,7 @@ app = Flask(__name__) # Creamos una instancia de la clase Flask
 
 @app.route('/') # Decorador de ruta
 def index(): # Función que se ejecuta cuando se accede a la ruta raíz
-    return "<h1>Bienvenidos a MyEnterprise!!</h1>" # Devolvemos una cadena de texto
+    return "<h1>Hola Mundo Flask!!</h1>" # Devolvemos una cadena de texto
 
 if __name__ == "__main__": # Se asegura de que este archivo se ejecute directamente y no desde un módulo diferente
     app.run(debug=True) # Ejecutamos la aplicación en modo depuración
@@ -131,7 +131,7 @@ Cada ruta en Flask se identifica con una función y un decorador (@). Los decora
 
 
 ```python
-# Filename: app.py
+# Filename: server.py
 
 # Agregaremos las rutas description/ y contact/office. Cada una de ellas estará asociada a una función
 # distinta
@@ -161,7 +161,7 @@ def hola(nombre, apellido, edad):
 
 ## 5. Renderizado de vistas
 
-Hasta el momento, hemos visualizado los contenidos de cada página directamente como returns de textos en cada función Flask. Podemos reutilizar códigos html para generar cada página en un proceso que se llama *renderizado*. Para ello, debemos importar la clase Flask y la clase render_template.
+Hasta el momento, hemos visualizado los contenidos de cada página directamente como returns de textos en cada función Flask. Podemos reutilizar códigos html para generar cada página en un proceso que se llama *renderizado*. Para ello, debemos importar la clase Flask y la función render_template.
 
 Primero, debemos agregar la función de renderizado desde Flask
 ```python
@@ -175,7 +175,7 @@ def user(nombre, apellido, edad):
     return render_template('user.html', nombre=nombre, apellido=apellido, edad=edad)
 ```
 
-*render_template* es la función encargada del renderizado utilizando un archivo .html como base. Los parámetros *nombre*, *apellido* y *edad* serán pasados a la plantilla. Nótese que la plantilla debe estar en la carpeta *templates*.
+*render_template* es la función encargada del renderizado utilizando un archivo .html como base. Los parámetros *nombre*, *apellido* y *edad* serán pasados a la plantilla. Nótese que la plantilla **debe** estar en la carpeta *templates*.
 
 El código html dentro del archivo *user.html* es el siguiente
 
