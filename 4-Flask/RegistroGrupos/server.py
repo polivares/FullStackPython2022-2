@@ -29,7 +29,7 @@ def add_group():
         else:  # Sino es el primer grupo
             id = grupos[-1].id + 1  # El id es igual al último + 1
         integrante1 = request.form.get("integrante1")
-        integrante2 = request.form.get("itegrante2")
+        integrante2 = request.form.get("integrante2")
         integrante3 = request.form.get("integrante3")
         integrantes = [integrante1, integrante2, integrante3]
         tema = request.form.get("project_title")
