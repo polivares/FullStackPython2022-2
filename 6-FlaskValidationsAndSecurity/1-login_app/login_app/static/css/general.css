@@ -1,0 +1,14 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "helvetica neue", arial, verdana, sans-serif;
+}
+
+/* Mensajes de validación */
+#warning {
+    background-color: #ff8c00; /* Establece el color de fondo en naranja */
+    color: white; /* Establece el color del texto en blanco */
+    padding: 1em; /* Establece un padding de 1em */
+    border-radius: 0.5em; /* Establece un borde redondeado de 0.5em */
+    font-weight: bold; /* Hace que la fuente sea negrita */
+  }

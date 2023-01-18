@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva cuenta de usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/center_form.css') }}">
+</head>
+<body>
+    
+    <main>
+        {% with messages = get_flashed_messages() %}    
+            {% if messages %}                            
+                {% for message in messages %}          
+                    <p id="warning">{{message}}</p>                 
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h1>Formulario de creación de cuenta</h1>
+        <form action="{{url_for('signup')}}" method="POST">
+            <input type="text" name="first_name" placeholder="First Name">
+            <input type="text" name="last_name" placeholder="Last Name">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="confirm_password" placeholder="Confirm password">
+            <input type="submit">
+        </form>
+        <a href="{{url_for('login')}}">Login</a>
+    </main>
+</body>
+</html>

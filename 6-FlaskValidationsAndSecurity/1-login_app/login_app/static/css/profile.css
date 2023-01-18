@@ -1,0 +1,31 @@
+/* Estilo de la barra de navegación */
+nav {
+    top: 0;
+    left: 0;
+    background-color: rgb(65, 172, 208); /* color de fondo de la barra de navegación */
+    color: black; /* color del texto en la barra de navegación */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+/* Estilo para el mensaje de bienvenida */
+#welcome-message {
+    margin-left: 10px;
+}
+
+/* Estilo para el botón de cierre de sesión */
+#logout-button {
+    background-color: #ff0000; /* color de fondo del botón */
+    color: #fff; /* color del texto en el botón */
+    padding: 5px 10px; /* espaciado interno del botón */
+    margin-right: 10px;
+}
+p{
+    margin-top: 50px;
+    padding: 20px;
+}
