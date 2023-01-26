@@ -1,7 +1,7 @@
 # Enlaces útiles
 
 - Conexión ssh con putty y archivo ppk: https://www.bluehost.com/help/article/using-ssh-on-windows-putty
-- Creación de contraseña de administrador (root) para mysql server: https://exerror.com/failed-error-set-password-has-no-significance-for-user-rootlocalhost-as-the-authentication-method-used-doesnt-store-authentication-data-in-the-mysql-server/ 
+- Creación de contraseña de administrador (root) para mysql server (resolución de problema para `mysql_secure_installation`): https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04
 - En caso de error 500, esto podría deberse a algún problema en el acceso del servidor web a nuestro proyecto. Algunas opciones para solucionarlo son:
     - Verificar que no haya ningún error en nuestro código (ej. error en la clave del usuario de mysql)
     - Cambiar los permisos de los archivos en nuestro proyecto. 
